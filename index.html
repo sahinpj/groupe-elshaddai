@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Groupe El Shaddai — Électricité · Télécom · BTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+</head>
+<body>
+
+  <!-- Announce -->
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="logo.png" alt="Groupe El Shaddai" style="height:52px;width:auto;display:block;" />
+        <div class="nav-logo-name">
+          <span class="line1">Groupe El Shaddai</span>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <ul class="nav-menu">
+
+        <!-- Accueil -->
+        <li class="nav-item">
+          <div class="nav-link" onclick="location.href='index.html'" style="cursor:pointer">Accueil</div>
+        </li>
+
+        <!-- Activités -->
+        <li class="nav-item">
+          <div class="nav-link" onclick="location.href='activites.html'" style="cursor:pointer">Activités</div></li>
+
+        <!-- Réalisations -->
+        <li class="nav-item">
+          <div class="nav-link" onclick="scrollToPortfolio('all')" style="cursor:pointer;">Réalisations</div></li>
+
+        <!-- À propos -->
+        <li class="nav-item">
+          <div class="nav-link">À propos</div></li>
+        <!-- Contact -->
+        <li class="nav-item">
+          <div class="nav-link" onclick="location.href='contact.html'" style="cursor:pointer">Contact</div>
+        </li>
+
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="btn-portal" onclick="location.href='contact.html'"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 2.14h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          Nous contacter
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+
+  <div class="hero-carousel-wrap" id="heroCarousel">
+    <div class="carousel-track" id="carouselTrack">
+
+      <div class="carousel-slide slide-light active" id="slide-0">
+        <div class="carousel-bg" style="background-image:url('slide1-solaire.jpg')"></div>
+      </div>
+
+      <div class="carousel-slide slide-light" id="slide-1">
+        <div class="carousel-bg" style="background-image:url('slide2-btp.jpg')"></div>
+      </div>
+
+      <div class="carousel-slide slide-light" id="slide-2">
+        <div class="carousel-bg" style="background-image:url('slide3-ht.jpg')"></div>
+      </div>
+
+      <div class="carousel-slide slide-light" id="slide-3">
+        <div class="carousel-bg" style="background-image:url('slide4-transfo.jpg')"></div>
+      </div>
+
+    </div><!-- /carousel-track -->
+
+    <!-- Overlay statique : le texte ne bouge jamais -->
+    <div class="carousel-static-overlay slide-light">
+
+      <!-- Etiquette de categorie (differente par slide) -->
+      <div class="slide-category-tag hero-ct" id="hero-ct-0">
+        <span class="iconify" data-icon="fa6-solid:solar-panel"></span>
+        &Eacute;nergie Solaire
+      </div>
+      <div class="slide-category-tag hero-ct" id="hero-ct-1" style="display:none">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        B&acirc;timents &amp; Travaux Publics
+      </div>
+      <div class="slide-category-tag hero-ct" id="hero-ct-2" style="display:none">
+        <span class="iconify" data-icon="fa6-solid:bolt"></span>
+        &Eacute;lectricit&eacute; HT &middot; MT &middot; BT
+      </div>
+      <div class="slide-category-tag hero-ct" id="hero-ct-3" style="display:none">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Fournitures &eacute;lectriques
+      </div>
+
+      <!-- Contenu textuel commun (identique sur toutes les images) -->
+      <div class="carousel-content">
+        <div class="slide-badge">
+          <span class="slide-badge-dot"></span>
+          Agr&eacute;&eacute; SONABEL &middot; CIE &middot; Abidjan, C&ocirc;te d'Ivoire
+        </div>
+        <h1 class="slide-title">
+          L'&eacute;nergie &amp; les <em>infrastructures</em><br/>qui b&acirc;tissent <span class="hi-green">demain</span>
+        </h1>
+        <p class="slide-sub">
+          Groupe El Shaddai est votre partenaire de confiance pour les installations &eacute;lectriques haute tension, l'&eacute;nergie solaire, les r&eacute;seaux t&eacute;l&eacute;coms et les travaux de g&eacute;nie civil &agrave; Abidjan et partout en C&ocirc;te d'Ivoire.
+        </p>
+
+        <!-- Tags specifiques par slide (affiches/caches par JS) -->
+        <div class="slide-tags hero-tags" id="hero-tags-0">
+          <span class="htag green"><span class="iconify" data-icon="fa6-solid:solar-panel"></span>Panneaux PV On/Off-grid</span>
+          <span class="htag green"><span class="iconify" data-icon="fa6-solid:bolt"></span>Pompage solaire</span>
+          <span class="htag green">Mini-r&eacute;seaux ruraux</span>
+        </div>
+        <div class="slide-tags hero-tags" id="hero-tags-1" style="display:none">
+          <span class="htag blue"><span class="iconify" data-icon="fa6-solid:helmet-safety"></span>G&eacute;nie civil</span>
+          <span class="htag blue">VRD &amp; Terrassement</span>
+          <span class="htag blue">Construction neuve</span>
+        </div>
+        <div class="slide-tags hero-tags" id="hero-tags-2" style="display:none">
+          <span class="htag blue"><span class="iconify" data-icon="fa6-solid:bolt"></span>Postes HTA 33kV</span>
+          <span class="htag blue">R&eacute;seaux de distribution</span>
+          <span class="htag blue">&Eacute;clairage public</span>
+        </div>
+        <div class="slide-tags hero-tags" id="hero-tags-3" style="display:none">
+          <span class="htag blue">Transformateurs HT/BT</span>
+          <span class="htag blue">TGBT &amp; Armoires</span>
+          <span class="htag blue">C&acirc;bles &amp; Canalisations</span>
+        </div>
+
+        <div class="slide-cta">
+          <button class="btn-primary" onclick="location.href='contact.html'">Demander un devis <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          <button class="btn-secondary" onclick="scrollToPortfolio('all')"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Voir nos r&eacute;alisations</button>
+        </div>
+        <div class="slide-stats hero-stats">
+          <div class="stat-item"><div class="stat-n">15<span>ans</span></div><div class="stat-label">D'expertise</div></div>
+          <div class="stat-sep"></div>
+          <div class="stat-item"><div class="stat-n">200<span>+</span></div><div class="stat-label">Projets livr&eacute;s</div></div>
+          <div class="stat-sep"></div>
+          <div class="stat-item"><div class="stat-n">98<span>%</span></div><div class="stat-label">Satisfaction</div></div>
+          <div class="stat-sep"></div>
+          <div class="stat-item"><div class="stat-n">50<span>+</span></div><div class="stat-label">Techniciens</div></div>
+        </div>
+      </div>
+
+      <!-- Numeros de slide (differents par slide) -->
+      <span class="slide-num" id="hero-num-0">01 / 04</span>
+      <span class="slide-num" id="hero-num-1" style="display:none">02 / 04</span>
+      <span class="slide-num" id="hero-num-2" style="display:none">03 / 04</span>
+      <span class="slide-num" id="hero-num-3" style="display:none">04 / 04</span>
+
+    </div><!-- /carousel-static-overlay -->
+
+    <!-- Fleches -->
+    <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Precedent">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Suivant">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="carouselDots">
+      <div class="carousel-dot active" data-idx="0"></div>
+      <div class="carousel-dot" data-idx="1"></div>
+      <div class="carousel-dot" data-idx="2"></div>
+      <div class="carousel-dot" data-idx="3"></div>
+    </div>
+  </div>
+
+  
+
+  <!-- Partenaires -->
+  <div class="partners">
+    <div class="partners-inner">
+      <p class="partners-label">Ils nous font confiance</p>
+      <div class="partners-logos">
+        <span class="partner-logo">SONABEL</span>
+        <span class="partner-logo">CIE</span>
+        <span class="partner-logo">Orange CI</span>
+        <span class="partner-logo">MTN CI</span>
+        <span class="partner-logo">Mairie d'Abidjan</span>
+        <span class="partner-logo">BNETD</span>
+        <span class="partner-logo">AGEROUTE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOS ACTIVITÉS -->
+  <div class="section">
+    <div class="section-label">Nos domaines d'activités</div>
+    <h2 class="section-title">Une expertise complète au service de vos <span class="hi">projets</span></h2>
+    <div class="offer-grid">
+
+      <div class="offer-card">
+        <div class="offer-num">01</div>
+        <div class="offer-icon blue"><span class="iconify" data-icon="fa6-solid:bolt"></span></div>
+        <div class="offer-title">Énergies & Génie Civil</div>
+        <div class="offer-sub">HTA · BTA · EP · MT · BTP · Eau</div>
+        <div class="offer-desc">Extension de réseaux HTA-BTA-EP-MT, équipement de postes HTA/BTA, travaux BTP gros œuvre et finition, froid général et adduction d'eau. Une expertise complète de l'énergie au génie civil.</div>
+        <div class="offer-tags">
+          <span class="offer-tag">Réseau HTA-BTA</span>
+          <span class="offer-tag">Postes HTA/BTA</span>
+          <span class="offer-tag">Gros œuvre</span>
+          <span class="offer-tag">Froid général</span>
+          <span class="offer-tag">Adduction d'eau</span>
+        </div>
+        <div class="offer-link">En savoir plus <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-num">02</div>
+        <div class="offer-icon blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="offer-title">Télécommunication et Technologies</div>
+        <div class="offer-sub">Fibre · Radio · Câblage · VSAT</div>
+        <div class="offer-desc">Déploiement de réseaux fibre optique FTTH/FTTB, câblage structuré, installation d'antennes, systèmes VSAT, bornes WiFi industrielles, vidéosurveillance IP et intégration réseau LAN/WAN.</div>
+        <div class="offer-tags">
+          <span class="offer-tag">Fibre optique</span>
+          <span class="offer-tag">VSAT</span>
+          <span class="offer-tag">Câblage Cat6/Cat7</span>
+          <span class="offer-tag">WiFi industriel</span>
+          <span class="offer-tag">Vidéosurveillance</span>
+        </div>
+        <div class="offer-link">En savoir plus <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-num">03</div>
+        <div class="offer-icon green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div class="offer-title">Construction métallique & Vente d'équipement</div>
+        <div class="offer-sub">Charpente · Structures · Pose</div>
+        <div class="offer-desc">Conception et réalisation d'ouvrages en construction métallique : charpentes, structures pour bâtiments industriels et commerciaux, menuiserie métallique, serrurerie, vente et pose d'équipements divers.</div>
+        <div class="offer-tags">
+          <span class="offer-tag">Charpente métallique</span>
+          <span class="offer-tag">Structures sur mesure</span>
+          <span class="offer-tag">Serrurerie</span>
+          <span class="offer-tag">Vente équipements</span>
+          <span class="offer-tag">Pose & installation</span>
+        </div>
+        <div class="offer-link">En savoir plus <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-num">04</div>
+        <div class="offer-icon orange"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="offer-title">Promotion immobilière</div>
+        <div class="offer-sub">Résidentiel · Clé en main · Lotissements</div>
+        <div class="offer-desc">Développement et commercialisation de programmes immobiliers résidentiels et commerciaux, projets clé en main, aménagement de lotissements viabilisés et accompagnement des investisseurs.</div>
+        <div class="offer-tags">
+          <span class="offer-tag">Promotion immobilière</span>
+          <span class="offer-tag">Résidentiel</span>
+          <span class="offer-tag">Clé en main</span>
+          <span class="offer-tag">Lotissements</span>
+          <span class="offer-tag">Investissement</span>
+        </div>
+        <div class="offer-link">En savoir plus <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BANDEAU CHIFFRES -->
+  <div class="band">
+    <div class="band-inner">
+      <div class="band-stat"><div class="band-n"><span data-count="200">200</span><em>+</em></div><div class="band-label">Projets livrés</div></div>
+      <div class="band-stat"><div class="band-n"><span data-count="15">15</span><em>ans</em></div><div class="band-label">Expérience terrain</div></div>
+      <div class="band-stat"><div class="band-n"><span data-count="4">4</span></div><div class="band-label">Domaines d'expertise</div></div>
+      <div class="band-stat"><div class="band-n"><span data-count="98">98</span><em>%</em></div><div class="band-label">Satisfaction client</div></div>
+      <div class="band-stat"><div class="band-n">50<em>+</em></div><div class="band-label">Techniciens certifiés</div></div>
+    </div>
+  </div>
+
+  <!-- ════════ PORTFOLIO ════════ -->
+
+  <div class="portfolio-section" id="realisations">
+    <div class="portfolio-header">
+      <div class="portfolio-header-left">
+        <div class="section-label">Nos réalisations</div>
+        <h2 class="section-title" style="margin-bottom:0">Des projets qui <span class="hi">parlent</span> d'eux-mêmes</h2>
+        <div class="portfolio-count" id="portfolioCount">4 réalisations</div>
+      </div>
+      <div class="portfolio-filters">
+        <button class="pf-btn active" data-filter="all">Tous les projets</button>
+        <button class="pf-btn" data-filter="elec">Électricité HT/MT/BT</button>
+      </div>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- Projet 1 — FEATURED — Déplacement réseau MT Tongon -->
+      <div class="pcard featured" data-cat="elec">
+        <div class="pcard-img">
+          <div class="pcard-img-inner pcard-gallery" data-imgs='["p1-tongon-1.jpeg","p1-tongon-2.jpeg","p1-tongon-3.jpeg","p1-tongon-4.jpeg","p1-tongon-5.jpeg","p1-tongon-6.jpeg"]' style="background:#0c1820;">
+            <img src="p1-tongon-1.jpeg" alt="Déplacement réseau MT Tongon" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <span class="pcard-cat elec"><span class="iconify" data-icon="fa6-solid:bolt"></span>Électricité MT</span>
+          <div class="pcard-gallery-nav">
+            <button class="pgal-prev" aria-label="Précédent">&#8249;</button>
+            <span class="pgal-dots"></span>
+            <button class="pgal-next" aria-label="Suivant">&#8250;</button>
+          </div>
+          <div class="pcard-overlay"><div class="pcard-overlay-btn">Voir le projet <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2024</span>
+            <span class="pcard-loc"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tongon, Nord CI</span>
+          </div>
+          <div class="pcard-title">Déplacement de réseau MT — Mine d'or de Tongon</div>
+          <div class="pcard-desc">Déviation et reconstruction d'un réseau moyenne tension en milieu minier aurifère. Travaux sous contraintes sécuritaires strictes incluant dépose de câbles aériens, remplacement d'armements et remise en service sans interruption prolongée de l'alimentation du site.</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">Réseau MT</span>
+            <span class="pcard-tag">Milieu minier</span>
+            <span class="pcard-tag">Travaux sous tension</span>
+            <span class="pcard-tag">Mine d'or</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 2 — Électrification pylône MTN -->
+      <div class="pcard" data-cat="elec">
+        <div class="pcard-img">
+          <div class="pcard-img-inner pcard-gallery" data-imgs='["p2-mtn-1.jpeg","p2-mtn-2.jpeg"]' style="background:#0c1820;">
+            <img src="p2-mtn-1.jpeg" alt="Électrification pylône MTN" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <span class="pcard-cat elec"><span class="iconify" data-icon="fa6-solid:bolt"></span>Électrification</span>
+          <div class="pcard-gallery-nav">
+            <button class="pgal-prev" aria-label="Précédent">&#8249;</button>
+            <span class="pgal-dots"></span>
+            <button class="pgal-next" aria-label="Suivant">&#8250;</button>
+          </div>
+          <div class="pcard-overlay"><div class="pcard-overlay-btn">Voir le projet <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2024</span>
+            <span class="pcard-loc"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Côte d'Ivoire</span>
+          </div>
+          <div class="pcard-title">Électrification pylône — Site télécoms MTN</div>
+          <div class="pcard-desc">Raccordement électrique d'un pylône de téléphonie mobile MTN incluant pose de poteaux béton, tirage de câbles MT, installation de coffrets de comptage et mise en service de l'alimentation du site avec éclairage périphérique.</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">Pylône télécom</span>
+            <span class="pcard-tag">MTN</span>
+            <span class="pcard-tag">Raccordement MT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 3 — Maintenance cellules HTA CIE -->
+      <div class="pcard" data-cat="elec">
+        <div class="pcard-img">
+          <div class="pcard-img-inner pcard-gallery" data-imgs='["p3-cie-maint-1.jpeg","p3-cie-maint-2.jpeg"]' style="background:#0c1820;">
+            <img src="p3-cie-maint-1.jpeg" alt="Maintenance cellules HTA CIE" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <span class="pcard-cat elec"><span class="iconify" data-icon="fa6-solid:bolt"></span>Électricité HTA</span>
+          <div class="pcard-gallery-nav">
+            <button class="pgal-prev" aria-label="Précédent">&#8249;</button>
+            <span class="pgal-dots"></span>
+            <button class="pgal-next" aria-label="Suivant">&#8250;</button>
+          </div>
+          <div class="pcard-overlay"><div class="pcard-overlay-btn">Voir le projet <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2024</span>
+            <span class="pcard-loc"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Côte d'Ivoire — CIE</span>
+          </div>
+          <div class="pcard-title">Maintenance préventive des cellules HTA — Postes de transformation CIE</div>
+          <div class="pcard-desc">Opérations de maintenance préventive sur les cellules haute tension (HTA) de plusieurs postes de transformation du réseau CIE : contrôle des appareillages SF6, vérification des jeux de barres, nettoyage des isolants et tests de continuité pour garantir la fiabilité du réseau.</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">Cellules HTA</span>
+            <span class="pcard-tag">SF6</span>
+            <span class="pcard-tag">Maintenance préventive</span>
+            <span class="pcard-tag">CIE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 4 — Sécurisation postes transformation CIE -->
+      <div class="pcard" data-cat="elec">
+        <div class="pcard-img">
+          <div class="pcard-img-inner pcard-gallery" data-imgs='["p4-cie-secu-1.jpeg","p4-cie-secu-2.jpeg","p4-cie-secu-3.jpeg"]' style="background:#0c1820;">
+            <img src="p4-cie-secu-1.jpeg" alt="Sécurisation postes CIE" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+          <span class="pcard-cat elec"><span class="iconify" data-icon="fa6-solid:bolt"></span>Électricité HT</span>
+          <div class="pcard-gallery-nav">
+            <button class="pgal-prev" aria-label="Précédent">&#8249;</button>
+            <span class="pgal-dots"></span>
+            <button class="pgal-next" aria-label="Suivant">&#8250;</button>
+          </div>
+          <div class="pcard-overlay"><div class="pcard-overlay-btn">Voir le projet <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-meta">
+            <span class="pcard-year">2024</span>
+            <span class="pcard-loc"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Côte d'Ivoire — CIE</span>
+          </div>
+          <div class="pcard-title">Sécurisation des postes de transformation — Réseau CIE</div>
+          <div class="pcard-desc">Travaux de mise en sécurité de postes de transformation HT/MT du réseau de la Compagnie Ivoirienne d'Électricité : installation de protections mécaniques, vérification des mises à la terre, conformité des équipements aux normes en vigueur et remise en état des locaux techniques.</div>
+          <div class="pcard-tags">
+            <span class="pcard-tag">Postes HT/MT</span>
+            <span class="pcard-tag">Mise à la terre</span>
+            <span class="pcard-tag">Normes sécurité</span>
+            <span class="pcard-tag">CIE</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div><!-- /portfolio-grid -->
+  </div>
+
+  
+
+  <!-- NOTRE MÉTHODE -->
+  <div class="section">
+    <div class="process-grid">
+      <div>
+        <div class="section-label">Notre approche projet</div>
+        <h2 class="section-title" style="margin-bottom:40px">De l'étude à la réception, on vous accompagne</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-n">01</div>
+            <div><div class="process-step-title">Étude & Diagnostic technique</div><div class="process-step-desc">Analyse de vos besoins, visite de site, étude de faisabilité et dimensionnement des équipements par nos ingénieurs.</div></div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-n">02</div>
+            <div><div class="process-step-title">Conception & Ingénierie</div><div class="process-step-desc">Élaboration des plans d'exécution, schémas unifilaires, notes de calcul conformes aux normes CEI/NFC.</div></div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-n">03</div>
+            <div><div class="process-step-title">Approvisionnement</div><div class="process-step-desc">Sélection et livraison des équipements auprès de nos fournisseurs agréés — câbles, transformateurs, panneaux PV, matériaux BTP.</div></div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-n">04</div>
+            <div><div class="process-step-title">Exécution & Suivi de chantier</div><div class="process-step-desc">Déploiement par nos équipes certifiées, rapports d'avancement hebdomadaires et contrôle qualité permanent.</div></div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-n">05</div>
+            <div><div class="process-step-title">Réception & Maintenance</div><div class="process-step-desc">Tests et mise en service, dossier des ouvrages exécutés (DOE), formation des équipes et contrat de maintenance.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-image-box">
+        <div class="process-image-inner">
+          <div class="pi-row">
+            <span class="pi-title">Suivi — Poste HTA Yopougon</span>
+            <span class="float-chip green" style="font-size:10px;padding:2px 8px"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:var(--green);fill:none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>En cours</span>
+          </div>
+          <div class="pi-bar-group">
+            <div class="pi-bar-item">
+              <div class="pi-bar-label"><span>Génie civil</span><span>100%</span></div>
+              <div class="pi-bar-track"><div class="pi-bar-fill" style="width:100%;background:var(--green)"></div></div>
+            </div>
+            <div class="pi-bar-item">
+              <div class="pi-bar-label"><span>Appareillage HTA</span><span>85%</span></div>
+              <div class="pi-bar-track"><div class="pi-bar-fill" style="width:85%;background:var(--accent)"></div></div>
+            </div>
+            <div class="pi-bar-item">
+              <div class="pi-bar-label"><span>Câblage BT</span><span>62%</span></div>
+              <div class="pi-bar-track"><div class="pi-bar-fill" style="width:62%;background:var(--accent)"></div></div>
+            </div>
+            <div class="pi-bar-item">
+              <div class="pi-bar-label"><span>Mise en service</span><span>0%</span></div>
+              <div class="pi-bar-track"><div class="pi-bar-fill" style="width:2%;background:#ddd"></div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--off);border-radius:8px;padding:12px">
+              <div style="font-size:10px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">Avancement global</div>
+              <div style="font-size:26px;font-weight:700;letter-spacing:-.03em;color:var(--orange)">78%</div>
+            </div>
+            <div style="background:var(--off);border-radius:8px;padding:12px">
+              <div style="font-size:10px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">Équipe terrain</div>
+              <div style="font-size:26px;font-weight:700;letter-spacing:-.03em">12 tech.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-inner">
+      <h2 class="cta-title">Votre projet <em>mérite</em> les meilleurs experts</h2>
+      <p class="cta-sub">De l'étude technique à la livraison clé en main, Groupe El Shaddai s'engage sur la qualité, les délais et la conformité aux normes ivoiriennes et internationales.</p>
+      <div class="cta-actions">
+        <button class="btn-white" onclick="location.href='contact.html'">
+          Obtenir un devis gratuit
+          <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <button class="btn-outline-white" onclick="scrollToPortfolio('all')">Voir nos réalisations</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo1.png" alt="Groupe El Shaddai" style="height:128px;width:auto;display:block;" />
+            <div>
+              <span class="line1">Groupe El Shaddai</span>
+            </div>
+          </div>
+          <p>Votre partenaire de confiance pour l'électricité haute tension, l'énergie solaire, les télécommunications, le BTP et la fourniture de matériels électriques en Côte d'Ivoire.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Activités</div>
+          <a class="footer-link" href="activites.html#act-elec">Électricité HT-MT-BT</a>
+          <a class="footer-link" href="activites.html#act-solar">Énergie Solaire</a>
+          <a class="footer-link" href="activites.html#act-tel">Télécommunications</a>
+          <a class="footer-link" href="activites.html#act-btp">Bâtiments & TP</a>
+          <a class="footer-link">Fournitures électriques</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Entreprise</div>
+          <a class="footer-link">Notre histoire</a>
+          <a class="footer-link">L'équipe</a>
+          <a class="footer-link">Certifications</a>
+          <a class="footer-link">Réalisations</a>
+          <a class="footer-link">Carrières</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <a class="footer-link" href="mailto:infos@groupe-elshaddai.ci">infos@groupe-elshaddai.ci</a>
+          <a class="footer-link">+225 07 ×× ×× ××</a>
+          <a class="footer-link">Abidjan, Cocody</a>
+          <a class="footer-link">Côte d'Ivoire</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 Groupe El Shaddai — YSP. Tous droits réservés.</span>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">CGV</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <script src="main.js"></script>
+  <script>
+    // ── Galeries photos des projets ──────────────────────────────────────
+    document.querySelectorAll('.pcard-gallery').forEach(function(gallery) {
+      var imgs = JSON.parse(gallery.getAttribute('data-imgs') || '[]');
+      if (imgs.length < 2) return;
+
+      var img = gallery.querySelector('img');
+      var nav = gallery.parentElement.querySelector('.pcard-gallery-nav');
+      var dotsWrap = nav.querySelector('.pgal-dots');
+      var prev = nav.querySelector('.pgal-prev');
+      var next = nav.querySelector('.pgal-next');
+      var current = 0;
+
+      // Créer les points
+      imgs.forEach(function(_, i) {
+        var dot = document.createElement('span');
+        dot.className = 'pgal-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', function(e) { e.stopPropagation(); goTo(i); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function goTo(n) {
+        current = (n + imgs.length) % imgs.length;
+        img.src = imgs[current];
+        dotsWrap.querySelectorAll('.pgal-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      prev.addEventListener('click', function(e) { e.stopPropagation(); goTo(current - 1); });
+      next.addEventListener('click', function(e) { e.stopPropagation(); goTo(current + 1); });
+    });
+  </script>
+</body>
+</html>
